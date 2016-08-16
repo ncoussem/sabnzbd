@@ -2,14 +2,10 @@ FROM alpine:latest
 
 MAINTAINER ncoussem
 
-RUN apk upgrade --update  
-
-RUN apk add git gcc g++ make automake autoconf openssl ca-certificates unrar p7zip mercurial \
-     python py-pip python-dev openssl-dev libffi-dev ffmpeg-libs ffmpeg
-
-
-RUN pip install --upgrade --no-cache-dir pip cheetah pyopenssl
-RUN pip install --no-cache-dir  
+RUN apk upgrade --update \ 
+ && apk add git gcc g++ make automake autoconf openssl ca-certificates unrar p7zip mercurial \
+     	python py-pip python-dev openssl-dev libffi-dev ffmpeg-libs ffmpeg \
+ && pip install --upgrade --no-cache-dir pip cheetah pyopenssl 
 
 # Par2Cmdline (latest version)
 RUN git clone --depth 1 https://github.com/Parchive/par2cmdline.git \
