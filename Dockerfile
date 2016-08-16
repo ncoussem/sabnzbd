@@ -35,7 +35,7 @@ RUN hg clone https://bitbucket.org/dual75/yenc\
 RUN git clone --depth 1 --branch 1.1.0RC3 https://github.com/sabnzbd/sabnzbd.git 
 
 # menage
-RUN rm -rf /var/cache/apk \
+RUN rm -rf /var/cache/apk/ \
     /sabnzbd/.git \
     /tmp/*
 
@@ -45,5 +45,5 @@ VOLUME ["/config", "/data"]
 
 WORKDIR /sabnzbd
 
-CMD su "./SABnzbd.py -b 0 -f /config/ -s 0.0.0.0:8080"
+CMD su -pc "./SABnzbd.py -b 0 -f /config/ -s 0.0.0.0:8080"
 
