@@ -3,7 +3,7 @@ FROM python:2.7.13-alpine
 MAINTAINER ncoussem
 
 ENV SABNZBD_VERSION=2.1.0
-ENV PAR2CMDLINE_VERSION=v0.7.2
+ENV PAR2CMDLINE_VERSION=v0.7.3
 
 
 RUN apk upgrade --update \
